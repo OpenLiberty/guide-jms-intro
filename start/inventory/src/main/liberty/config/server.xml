@@ -1,16 +1,18 @@
 <server description="Inventory Service">
 
   <featureManager>
-    <feature>restfulWS-3.1</feature>
-    <feature>cdi-4.0</feature>
-    <feature>jsonb-3.0</feature>
-    <feature>mpHealth-4.0</feature>
-    <feature>mpConfig-3.1</feature>
-    <feature>messaging-3.1</feature>
-    <feature>messagingClient-3.0</feature>
-    <feature>messagingServer-3.0</feature>
-    <feature>enterpriseBeansLite-4.0</feature>
-    <feature>mdb-4.0</feature>
+    <platform>jakartaee-10.0</platform>
+    <platform>microprofile-7.0</platform>
+    <feature>restfulWS</feature>
+    <feature>cdi</feature>
+    <feature>jsonb</feature>
+    <feature>mpHealth</feature>
+    <feature>mpConfig</feature>
+    <feature>messaging</feature>
+    <feature>messagingClient</feature>
+    <feature>messagingServer</feature>
+    <feature>enterpriseBeansLite</feature>
+    <feature>mdb</feature>
   </featureManager>
 
   <variable name="http.port" defaultValue="9081"/>

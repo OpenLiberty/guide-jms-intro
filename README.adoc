@@ -1,4 +1,4 @@
-// Copyright (c) 2024 IBM Corporation and others.
+// Copyright (c) 2024, 2025 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -193,7 +193,7 @@ include::finish/inventory/src/main/java/io/openliberty/guides/inventory/Inventor
 
 The `inventory` microservice receives the messages from the `system` microservice. Implement the [hotspot=InventoryQueueListener file=0]`InventoryQueueListener` class with the `MessageListener` interface and annotate with [hotspot=messageDriven file=0]`@MessageDriven` to monitor the `jms/InventoryQueue` message queue. Implement the [hotspot=onMessage file=0]`onMessage()` method that processes the incoming messages, updates the inventory by using the [hotspot=InventoryManager hotspot=InventoryManagerUpdate file=0]`InventoryManager` bean, and logs the action. Use the [hotspot=systemLoad file=0]`SystemLoad.fromJson()` method to convert the JSON message string to the `SystemLoad` object.
 
-Next, configure the `inventory` microservice with an embedded messaging server and the https://openliberty.io/docs/latest/reference/feature/messagingClient-3.0.html[Messaging Server Client^] feature.
+Next, configure the `inventory` microservice with an embedded messaging server and the https://openliberty.io/docs/latest/reference/feature/messagingClient.html[Messaging Server Client^] feature.
 
 [role='code_command hotspot file=1', subs="quotes"]
 ----
@@ -299,8 +299,6 @@ endif::[]
 
 == Testing the inventory application
 
-//similar to https://openliberty.io/guides/cdi-intro.html#testing-the-inventory-application
-//explain the test
 While you can test your application manually, you should rely on automated tests because they trigger a failure whenever a code change introduces a defect. Because the application is a RESTful web service application, you can use JUnit and the RESTful web service Client API to write tests. In testing the functionality of the application, the scopes and dependencies are being tested.
 
 [role='code_command hotspot file=0', subs='quotes']

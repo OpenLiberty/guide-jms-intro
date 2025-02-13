@@ -1,18 +1,20 @@
 <server description="System Service">
 
   <featureManager>
-    <feature>cdi-4.0</feature>
-    <feature>jsonb-3.0</feature>
-    <feature>mpHealth-4.0</feature>
-    <feature>mpConfig-3.1</feature>
+    <platform>jakartaee-10.0</platform>
+    <platform>microprofile-7.0</platform>
+    <feature>cdi</feature>
+    <feature>jsonb</feature>
+    <feature>mpHealth</feature>
+    <feature>mpConfig</feature>
     <!-- tag::messaging[] -->
-    <feature>messaging-3.1</feature>
+    <feature>messaging</feature>
     <!-- end::messaging[] -->
     <!-- tag::messagingClient[] -->
-    <feature>messagingClient-3.0</feature>
+    <feature>messagingClient</feature>
     <!-- end::messagingClient[] -->
-    <feature>enterpriseBeansLite-4.0</feature>
-    <feature>mdb-4.0</feature>
+    <feature>enterpriseBeansLite</feature>
+    <feature>mdb</feature>
   </featureManager>
 
   <variable name="http.port" defaultValue="9082"/>
