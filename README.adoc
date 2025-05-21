@@ -63,41 +63,81 @@ The `finish` directory in the root of this guide contains the finished applicati
 To try out the application, first go to the `finish` directory and run the following Maven goal to build and install the `models` module. The `models` module contains the `SystemLoad` data class for both the `system` and `inventory` microservices to use.
 
 ifndef::cloud-hosted[]
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
+```
 cd finish
-mvn -pl models clean install
-----
+mvnw.cmd -pl models clean install
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+cd finish
+./mvnw -pl models clean install
+```
+--
 endif::[]
 
 ifdef::cloud-hosted[]
 ```bash
 cd /home/project/guide-jms-intro/finish
-mvn -pl models clean install
+./mvnw -pl models clean install
 ```
 endif::[]
 
 
 Start the `inventory` microservice by running the following command:
 
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl inventory liberty:run
-----
+```
+mvnw.cmd -pl inventory liberty:run
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl inventory liberty:run
+```
+--
 
 Next, open another command-line session, navigate to the `finish` directory, and start the `system` microservice by using the following command:
 
 ifndef::cloud-hosted[]
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl system liberty:run
-----
+```
+mvnw.cmd -pl system liberty:dev
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl system liberty:run
+```
+--
 endif::[]
 
 ifdef::cloud-hosted[]
 ```bash
 cd /home/project/guide-jms-intro/finish
-mvn -pl system liberty:run
+./mvnw -pl system liberty:run
 ```
 endif::[]
 
@@ -133,18 +173,32 @@ endif::[]
 After you are finished checking out the application, stop the Liberty instances by pressing `CTRL+C` in each command-line session where you ran Liberty. Alternatively, you can run the `liberty:stop` goal from the `finish` directory in another shell session:
 
 ifndef::cloud-hosted[]
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl inventory liberty:stop
-mvn -pl system liberty:stop
-----
+```
+mvnw.cmd -pl inventory liberty:stop
+mvnw.cmd -pl system liberty:stop
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl inventory liberty:stop
+./mvnw -pl system liberty:stop
+```
+--
 endif::[]
 
 ifdef::cloud-hosted[]
 ```bash
 cd /home/project/guide-jms-intro/finish
-mvn -pl inventory liberty:stop
-mvn -pl system liberty:stop
+./mvnw -pl inventory liberty:stop
+./mvnw -pl system liberty:stop
 ```
 endif::[]
 
@@ -162,10 +216,23 @@ When you run Open Liberty in https://openliberty.io/docs/latest/development-mode
 
 Run the following goal to start the `inventory` microservice in dev mode:
 
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl inventory liberty:dev
-----
+```
+mvnw.cmd -pl inventory liberty:dev
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl inventory liberty:dev
+```
+--
 
 When you see the following message, your Liberty instance is ready in dev mode:
 
@@ -224,10 +291,23 @@ cd /home/project/guide-jms-intro/start
 ```
 endif::[]
 
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl system liberty:dev
-----
+```
+mvnw.cmd -pl system liberty:dev
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl system liberty:dev
+```
+--
 
 When you see the following message, your Liberty instance is ready in dev mode:
 
@@ -538,32 +618,58 @@ Replace the `properties.wasJms` configuration by the [hotspot=properties.wmqjmsr
 Start the `inventory` microservice by running the following command in dev mode:
 
 ifndef::cloud-hosted[]
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl inventory liberty:dev
-----
+```
+mvnw.cmd -pl inventory liberty:dev
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl inventory liberty:dev
+```
+--
 endif::[]
 
 ifdef::cloud-hosted[]
 ```bash
 cd /home/project/guide-jms-intro/start
-mvn -pl inventory liberty:dev
+./mvnw -pl inventory liberty:dev
 ```
 endif::[]
 
 Next, open another command-line session, navigate to the `start` directory, and start the `system` microservice by using the following command:
 
 ifndef::cloud-hosted[]
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.windows_section]
+--
 [role='command']
-----
-mvn -pl system liberty:dev
-----
+```
+mvnw.cmd -pl system liberty:dev
+```
+--
+
+[.tab_content.mac_section.linux_section]
+--
+[role='command']
+```
+./mvnw -pl system liberty:dev
+```
+--
 endif::[]
 
 ifdef::cloud-hosted[]
 ```bash
 cd /home/project/guide-jms-intro/start
-mvn -pl system liberty:dev
+./mvnw -pl system liberty:dev
 ```
 endif::[]
 
