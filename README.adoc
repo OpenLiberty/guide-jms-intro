@@ -104,7 +104,15 @@ mvnw.cmd -pl inventory liberty:run
 ```
 --
 
-[.tab_content.mac_section.linux_section]
+[.tab_content.mac_section]
+--
+[role='command']
+```
+./mvnw -pl inventory liberty:run
+```
+--
+
+[.tab_content.linux_section]
 --
 [role='command']
 ```
@@ -226,7 +234,15 @@ mvnw.cmd -pl inventory liberty:dev
 ```
 --
 
-[.tab_content.mac_section.linux_section]
+[.tab_content.mac_section]
+--
+[role='command']
+```
+./mvnw -pl inventory liberty:dev
+```
+--
+
+[.tab_content.linux_section]
 --
 [role='command']
 ```
@@ -301,7 +317,15 @@ mvnw.cmd -pl system liberty:dev
 ```
 --
 
-[.tab_content.mac_section.linux_section]
+[.tab_content.mac_section]
+--
+[role='command']
+```
+./mvnw -pl system liberty:dev
+```
+--
+
+[.tab_content.linux_section]
 --
 [role='command']
 ```
